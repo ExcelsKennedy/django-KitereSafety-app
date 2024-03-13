@@ -1,0 +1,60 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Report{% endblock %}
+
+{% block content %}
+
+<div class="background">
+    <h1>Safety comes first!</h1>
+    <p>Welcome! <br>This is where you report. There are various ways to report. Just click the one that is to your liking
+    and proceed.</p>
+</div>
+{% if request.user.is_authenticated %}
+<div class="incident">
+    <h1>Report an incident</h1>
+    <div class="incident-flex">
+        <div>
+            <a href="{% url 'blog-home' %}" class="hero-btn"><i class="fa-solid fa-users-rectangle"></i> Report as Blog</a>
+        </div>
+        <div>
+            <a href="{% url 'audio-report' %}" class="hero-btn"><i class="fa-solid fa-phone"></i> Report as Audio</a>
+        </div>
+        <div>
+            <a href="{% url 'photo-report' %}" class="hero-btn"><i class="fa-solid fa-camera"></i> Report as Photo</a> 
+        </div>
+    </div>   
+</div>
+{% else %}
+<div class="incident">
+    <h1>Oops! Looks like you haven't logged in!</h1>
+        <p>Login to make your report or create your account</p><br>
+        <div class="incident-flex">
+            <div>
+                <a href="{% url 'core:login' %}" class="hero-btn">Join us today</a>
+            </div>
+            <div>
+                <a href="{% url 'core:signup' %}" class="hero-btn">Create an account</a>
+            </div>
+        </div>
+</div>
+{% endif %}
+
+<div class="report-flex">
+    <div>
+        <h1>Protect the people you love</h1> 
+        <p>Report any incident and help save and protect your <br>loved ones and people around you.</p>
+    </div>
+    <div>
+        <img src="{% static 'images/core/family-2.jpg' %}" alt="family">
+    </div>
+</div>
+
+<div class="protect-near-footer">
+    <h1>Protect your community.</h1>
+</div>
+
+<hr>
+
+{% endblock %}

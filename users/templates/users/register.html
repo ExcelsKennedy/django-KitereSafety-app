@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+{% block content %} 
+<div class="content-section-2">
+    <h1>Join Today</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="label-input">
+            <label>Username</label><br>  
+            <div class="input">{{ form.username }}</div>
+        </div>
+        <div class="label-input">
+            <label>Email</label><br>  
+            <div class="input">{{ form.email }}</div>
+        </div>
+        <div class="label-input">
+            <label>Password</label><br>  
+            <div class="input">{{ form.password1 }}</div>
+        </div>
+        <div class="label-input">
+            <label>Repeat password</label><br>  
+            <div class="input">{{ form.password2 }}</div>
+        </div>
+
+        {% if form.errors or form.non_field_errors %}
+            <div class="errors">
+                {% for field in form %} 
+                    {{ field.errors }}
+                {% endfor %}
+
+                {{ form.non_field_errors }} 
+            </div>
+        {% endif %}
+
+        <button>Submit</button>
+    </form>
+    <small>Already Have An Account? <a href="{% url 'login' %}">Sign In</a></small>
+</div>
+{% endblock %} 

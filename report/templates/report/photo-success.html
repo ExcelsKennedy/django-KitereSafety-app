@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Report As photo{% endblock %}
+
+{% block content %}
+
+<div class="background">
+    <h1>Success!!!</h1>
+    <p>Thank you for choosing to report to us! Your photo has been sent successfully!</p>
+</div>
+<div class="incident">
+    <div class="incident-flex">
+        <div>
+            <a href="{% url 'report-home' %}" class="hero-btn">Go to Report Page</a>
+        </div>
+        <div>
+            <a href="{% url 'photo-report' %}" class="hero-btn"><i class="fa-solid fa-camera"></i> Make another report</a> 
+        </div>
+    </div> 
+</div>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Photo report form{% endblock %}
+
+{% block content %}
+<div class="background">
+    <h1>Safety through your camera</h1>
+    <p>Take a photo and send it to us. Tell us more about this photo so that we can help you.</p>
+</div>
+
+<div class="photo-report">
+    <h1 class="photo-header">Photo report</h1>
+    <form method="post" enctype="multipart/form-data" class="photo-form">
+        {% csrf_token %}
+
+        <div class="input">
+            <label>Title:</label><br>
+            {{form.title}}
+        </div>
+        <div class="input">
+            <label>Photo:</label><br>
+            {{ form.photo }}
+        </div>
+        <div>
+            <label>Description:</label><br>
+            {{ form.description }}
+        </div>
+
+        {% if form.errors or form.non_field_errors %}
+            <div class="errors">
+                {% for field in form %} 
+                    {{ field.errors }}
+                {% endfor %}
+
+                {{ form.non_field_errors }} 
+            </div>
+        {% endif %}
+
+        <button type="submit" class="input-desc">Post</button>
+    </form>
+</div>
+
+<div class="incident">
+    <div class="incident-flex">
+        <a href="{% url 'report-home' %}" class="hero-btn">Go to Report Page</a>
+    </div>
+</div>
+{% endblock %}

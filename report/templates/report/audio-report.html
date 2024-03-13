@@ -1,0 +1,80 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Report As Audio{% endblock %}
+
+{% block content %}
+
+<div class="background">
+    <h1>Safety through Audio calls</h1>
+    <p>Report your incident by making a call. We have made it easy for you to know what number to call by labelling the 
+        type of incident. We hope you receive the help you desire.
+    </p>
+</div>
+
+<div class="Safety">
+    <div>
+        <h1>Health</h1>
+        <p>Call any of these numbers for any health related issues:</p>
+        <a href="tel:+254750635659" class="hero-btn">RU Clinic</a><br>
+        <a href="tel:+254719534660" class="hero-btn">Royal Hospital</a><br>
+        <a href="tel:+254100987236" class="hero-btn">Rongo Hospital</a><br>
+    </div>
+    <div>
+        <img src="{% static 'images/core/health.jpg' %}" alt="nurse">
+    </div>
+</div>
+
+<div class="Safety">
+    <div>
+        <h1>Accidents</h1>
+        <p>Call any of these numbers for any accident related issues:</p><br>
+        <a href="tel:+254100987654" class="hero-btn">Emergency response</a><br>
+        <a href="tel:911" class="hero-btn">Migori County Fire Department</a> <br>
+    </div>
+    <div>
+        <img src="{% static 'images/core/ambulance.jpg' %}" alt="ambulance">
+    </div>
+</div>
+
+<div class="Safety">
+    <div>
+        <h1>Security</h1>
+        <p>Call any of these numbers for any security related issues:</p>
+        <a href="tel:+254711098765" class="hero-btn">Kitere Police Station</a> <br> 
+        <a href="tel:+254789768543" class="hero-btn">RU security Department</a><br> 
+        <a href="tel:+254786543233" class="hero-btn">Missing People Rescue Team</a><br> 
+    </div>
+    <div>
+        <img src="{% static 'images/core/police-2.jpg' %}" alt="security">
+    </div>
+</div>
+
+<div class="Safety">
+    <div>
+        <h1>Violence</h1>
+        <p>Call any of these numbers for any safety related issues:</p>
+        <a href="tel:116" class="hero-btn">Child Abuse</a><br>
+        <a href="tel:+254768865345" class="hero-btn">Gender Based Violence</a><br>
+        <a href="tel:+254711098765" class="hero-btn">Sexual Violence</a><br>
+    </div>
+    <div>
+        <img src="{% static 'images/core/violence.jpg' %}" alt="Violence">
+    </div>
+</div>
+
+<div class="incident">
+    <div class="incident-flex">
+        <a href="{% url 'report-home' %}" class="hero-btn">Go to Report Page</a>
+    </div>
+</div>
+
+<div class="protect-near-footer">
+    <h1>Protect your community.</h1>
+</div>
+
+<hr>
+
+
+{% endblock %}
