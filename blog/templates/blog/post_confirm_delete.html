@@ -1,0 +1,33 @@
+{% extends 'blog/base.html' %}
+{% block content %} 
+<div class="content-section-2">
+    <h1>Delete Post</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <!-- <div class="label-input">
+            <label>Title</label><br>  
+            <div class="input">{{ form.title }}</div>
+        </div>
+        <div class="label-input">
+            <label>Content</label><br>  
+            <div class="input">{{ form.content }}</div>
+        </div> -->
+        <h2>Are you sure you want to delete the post "{{ object.title }}" </h2>
+
+        {% if form.errors or form.non_field_errors %}
+            <div class="errors">
+                {% for field in form %} 
+                    {{ field.errors }}
+                {% endfor %}
+
+                {{ form.non_field_errors }} 
+            </div>
+        {% endif %}
+
+        <button class="btn-danger" type="submit">Yes, Delete</button>
+        <a class="btn-secondary" href="{% url 'post-detail' object.id %}">Cancel</a>
+    </form>
+</div>
+{% endblock %} 

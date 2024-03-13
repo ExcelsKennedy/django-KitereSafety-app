@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <article class="content-section-3">
+            <img src="{{ post.author.profile.image.url }}" class="article-img">
+            <div>
+                <div class="article-metadata">
+                    <a href="">{{ post.author }}</a>
+                    <!-- Use the converted date_posted field -->
+                    <small>{{ post.date_posted }}</small>
+                </div>
+                <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+                <p class="article-content">{{ post.content }}</p>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock %}

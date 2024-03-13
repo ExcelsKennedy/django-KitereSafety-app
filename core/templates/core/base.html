@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} | KitereSafety</title>
+    <link rel="stylesheet" href="{% static 'core/core.css' %}"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <script src="https://kit.fontawesome.com/4175a2b915.js" crossorigin="anonymous"></script>
+</head>
+<body> 
+    <nav>
+        <a href="{% url 'core:index' %}" class="logo">KitereSafety</a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i> 
+            <ul>
+                <li><a href="{% url 'blog-home' %}">Community</a></li>
+                <li><a href="{% url 'report-home' %}">Report</a></li>
+                <li><a href="{% url 'core:about' %}">About</a></li>
+                <!-- <li><a href="{% url 'core:careers' %}">Careers</a></li> -->
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'notifications' %}">Notifications</a></li>                        
+                    <div class="logout-btn">
+                        <form action="{% url 'logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Logout</button>
+                        </form>
+                    </div>
+                {% else %}
+                <li><a href="{% url 'core:signup' %}">Sign up</a></li>
+                <li><a href="{% url 'core:login'%}">Login</a></li> 
+                {% endif %}
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <div>
+        {% if messages %} 
+            {% for message in messages %} 
+                <div class="alert">
+                    {{ message }} 
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- FOOTER -->
+
+<footer>
+    <div class="footer-flex">
+    <div class="footer-right">
+        <a href="{% url 'core:index' %}" class="logo">KitereSafety</a>
+        
+    </div>
+    <div class="footer-left">
+        <div class="left-right">            
+                <a href="{% url 'blog-home' %}">Community</a>
+                <a href="{% url 'report-home' %}">Report</a>
+                <a href="{% url 'core:about' %}">About</a>
+                <!-- <a href="{% url 'core:careers' %}">Careers</a> -->
+        </div>
+        <div class="left-left">
+                <a href="{% url 'core:privacy' %}">Privacy</a>
+                <a href="{% url 'core:terms' %}">Terms</a>
+        </div>
+    </div> 
+    </div>
+    <div class="social-media-links"> 
+        <a href=""><i class="fa fa-facebook"></i></a>
+        <a href=""><i class="fa fa-twitter"></i></a>
+        <a href=""><i class="fa fa-instagram"></i></a>
+        <a href=""><i class="fa fa-linkedin"></i></a>
+    </div>
+    <p>&copy;KitereSafety 2024</p>
+</footer>
+
+<script>
+
+    var navLinks = document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+
+</script>
+</body>
+</html>

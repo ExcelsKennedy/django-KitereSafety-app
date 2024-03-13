@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Sign up{% endblock %} 
+
+{% block content %}
+<div class="form-body"> 
+<div>
+    <h1>Sign up</h1>
+    <form method="post">
+        {% csrf_token %}
+
+        <div>
+            <label>Username</label><br>
+            {{ form.username }}
+        </div>
+        <div>
+            <label>Email</label><br>
+            {{ form.email }}
+        </div>
+        <div>
+            <label>Password</label><br>
+            {{ form.password1 }}
+        </div>
+        <div>
+            <label>Repeat Password</label><br>
+            {{ form.password2 }}
+        </div>
+
+        {% if form.errors or form.non_field_errors %}
+            <div>
+                {% for field in form %}
+                    {{ field.errors }}
+                {% endfor %}
+
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+
+        <span>By continuing, you confirm you've read and agree to our<a href="{% url 'core:terms' %}">Terms and conditions</a>and our
+            <a href="{% url 'core:privacy' %}">Privacy policy</a></span><br>
+
+        <button class="register-btn">Submit</button><br>
+
+        <span>Already have an account?<a href="{% url 'core:login' %}">Log in.</a></span>
+    </form>
+</div>
+<div>
+    <img src="{% static 'images/core/ambulance.jpg' %}" alt="ambulance"> 
+</div>
+</div>
+ 
+{% endblock %}      

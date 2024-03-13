@@ -1,0 +1,181 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Welcome{% endblock %} 
+
+{% block content %}
+    <div class="background">
+        <h1>Where you report</h1>
+        <p>KitereSafety is a platform for reporting incidences like missing people, lost property, natural disasters
+            and you get professional help. This is where you make your reports. Is anything dangerous
+            happening around you? Do you feel insecure? Take a photo or
+            report in text form or both. Whichever suits you. Our agents are
+            available 24/7 ready for you.
+        </p>
+        <p>Want to report an incident? Click on the report button below.</p>
+        <a href="{% url 'report-home' %}" class="hero-btn">Report an incident</a>
+    </div>
+
+    <hr>
+
+    <div class="near-header">
+        <h1>Stay connected</h1>
+        <p>KitereSafety connects you and all the community members. Get to <br>share safety updates with them and also receive 
+            safety updates <br>from them. Here you protect each other.
+        </p>
+        <p>Want to see what others are saying about the community? Click <br>the blog button below.</p>
+        <a href="{% url 'blog-home' %}" class="hero-btn">Blog</a>
+    </div>
+
+    <hr>
+
+    <div class="protect-com">
+        <div>
+            <img src="{% static 'images/core/chatscreen.jpg' %}" alt="live screen chat">
+        </div>
+        <div>
+            <h1>Instantly connect with your <br>agent via video, audio or <br>messaging 24/7</h1>
+            <p>Connect in the way that works best for you.</p>
+            <h3><i class="fa-solid fa-video"></i> Instant video</h3>
+            <p>Live video gives critical details about an emergency to <br>better communicate with your agent.</p>
+            <h3><i class="fa-solid fa-phone"></i> Instant Audio</h3>
+            <p>Stay connected to help, even when you are not holding your <br>phone. </p>      
+            <h3><i class="fa-solid fa-message"></i> Instant Messaging</h3>
+            <p>In situations where you can't speak, or need to be discreet <br>in requesting help.</p>
+        </div>
+    </div>
+
+    <div class="protect-header">
+        <h1>Your safety</h1>
+        <p>You matter to us.</p>
+        <h3><i class="fa-solid fa-notes-medical"></i> Health</h3>
+        <p>Whether its a sick friend or relative, we will get you an <br>ambulance.</p>
+        <h3><i class="fa-solid fa-person-falling"></i> Accidents</h3>
+        <p>Be it a fire, or road accident, we are here to help you.</p>
+        <h3><i class="fa-solid fa-shield-halved"></i> Security</h3>
+        <p>Did someone threaten you? Do you feel insecure? Alert <br>us early so we can help you.</p>
+    </div>
+
+    <div class="protect-exp">
+        <div>
+            <h1>Emergency Response</h1>
+            <p>We'll help you connect to first responders for expert advice and <br>evacuation support:</p>
+            <ul>
+                <li>Natural disasters</li>
+                <li>Emergency medical response connection</li>
+                <li>Disease outbreak advice and assistance</li>
+                <li>Monitoring during a medical emergency</li>
+            </ul>
+        </div>
+        <div>
+            <img src="{% static 'images/core/ambulance.jpg' %}" alt="ambulance">
+        </div>
+        
+    </div>
+
+    <div class="protect-near-footer">
+        <h1>Missing Person reports</h1>
+        <p>Incase anyone is missing, report it so that we can help you look for them.</p>
+    </div>
+
+    <div>
+        <div class="explanation">
+            <div class="explanation-img">
+                <!-- City background  -->
+                <h1>Your Community is <br>safer with KitereSafety.</h1>
+            </div>
+            <div class="explanation-flex">
+                <div>
+                    <h3><i class="fa-solid fa-triangle-exclamation"></i> Get safety alerts when they <br>matter to you --in real time.</h3>
+                    <p>Be situationally aware. If there's <br>an incident, like a fire, nearby, <br>you'll know to avoid that area. </p>
+                </div>
+                <div>
+                    <h3><i class="fa-solid fa-people-group"></i> Know what's happening so you <br>and your loved ones can stay <br>safe.</h3>
+                    <p>Connect with your family, friends <br>and neighbors on KitereSafety and find <br>out when something important 
+                        <br>is happening around them.
+                    </p>
+                </div>
+                <div>
+                    <h3><i class="fa-solid fa-handcuffs"></i> Always know why the cruiser <br>is on the road.</h3>
+                    <p>If there's commotion like police <br>activity, land cruisers on the road, or <br>road closures, pull up the 
+                        website and <br>know why instantly. 
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="real-story">
+        <h2>Know the real story <br>faster.</h2>
+        <div class="real-story-flex">
+            <div>
+                <h3><i class="fa-solid fa-circle-check"></i> Fast, accurate information makes a <br>meaningful difference in emergencies.</h3>
+                <p>KitereSafety alerts go out instantly. This speed is <br>critical in acting on important events like 
+                    <br>abductions and missing children or elderly people. 
+                </p>
+            </div>
+            <div>
+                <h3><i class="fa-solid fa-people-group"></i> When you can, contribute to help resolve a <br>situation.</h3>
+                <p>You used to have to go to the police station or call a <br>police tip line to help. Now you can use 
+                    KitereSafety <br>to share relevant updates with others. You can also <br>leave comments, which will help locate 
+                    missing <br>people and share information about natural disasters.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="explanation-2">
+        <h2>For the <br>greater good.</h2>
+        <!-- nurse background image  -->
+        <div class="explanation-flex-2"> 
+            <div>
+                <h3><i class="fa-solid fa-bell"></i> Hospital and emergency <br>responders save lives with <br>faster updates.</h3>
+                <p>Fire departments can use KitereSafety to <br>direct resources more effectively <br>because they can see the 
+                    intensity <br>of a fire on a photo, while <br>doctors and nurses can be prepared to <br>receive patients before even
+                    getting a call.
+                </p>
+            </div>
+            <div>
+                <h3><i class="fa-solid fa-people-group"></i> Increasing transparency <br>between the community and its <br>residents.</h3>
+                <p>We believe we should unite against <br>crime. Everyone deserves to be <br>safe--and now, everyone can better
+                    look <br>out for each other. Having real-time <br>information available and open to <br>everyone empowers us all to make 
+                    <br>smarter decisions to stay safe. 
+                </p>
+            </div>
+            <div>
+                <h3><i class="fa-solid fa-earth-africa"></i> Everyone is safer when everyone <br>has the same access.</h3>
+                <p>KitereSafety is for everyone--and is <br>therefore completely independent. With <br>KitereSafety, everyone in the 
+                    community, <br>whether a resident or member of law <br>enforcement, has the same access to the <br>website and its unbiased 
+                    information.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    {% if request.user.is_authenticated %} 
+    <div class="background">
+        <h1>Thank you for joining us!</h1>
+        <p>Do you enjoy KitereSafety? Please recommend it to your friends and family so that we expand our community.</p>
+    </div>
+    {% else %} 
+    <div class="background">
+        <h1>Join us</h1>
+        <p>Do you want to join this journey on personal and community safety? Create an account with us and be ready to 
+            report anytime. Just click the button below.
+        </p>
+        <a href="{% url 'core:signup' %}" class="hero-btn">Join us today</a>
+    </div>
+    {% endif %}
+        
+
+    <hr>
+
+    <div class="protect-near-footer">
+        <h1>Protect your community.</h1>
+    </div>
+
+    <hr class="hr">
+{% endblock %}

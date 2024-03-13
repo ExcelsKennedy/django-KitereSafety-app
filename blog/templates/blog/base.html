@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+    <script src="https://kit.fontawesome.com/4175a2b915.js" crossorigin="anonymous"></script>
+    {% if title %}
+    <title>KitereSafety Blog - {{ title }}</title> 
+    {% else %}
+    <title>KitereSafety Blog</title>
+    {% endif %}
+</head>
+<body>
+    <header>
+        <!-- <nav id="navBar">
+            <div class="container">
+                <div class="nav-links">
+                    <a href="{% url 'core:index' %}" class="logo">KitereSafety</a>
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <div class="links-1">
+                        <ul class="nav-links">
+                            <li><a href="{% url 'blog-home' %}">Home</a></li>
+                            <li><a href="{% url 'blog-about' %}">About</a></li>
+                        </ul>
+                        
+                    </div> -->
+                    <!--Navbar Right Side-->
+                    <!-- <div class="links-2">
+                        {% if user.is_authenticated %}
+                            <ul class="nav-links">
+                                <li><a href="{% url 'post-create' %}">New Post</a></li>
+                                <li><a href="{% url 'profile' %}">Profile</a></li>
+                            </ul> -->
+                            
+                            <!-- <div class="logout-btn"> -->
+                            <!-- <form action="{% url 'logout' %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit">Logout</button>
+                            </form> -->
+                            <!-- </div> -->
+                        <!-- {% else %}
+                            <ul class="nav-links">
+                                <li><a href="{% url 'core:login' %}">Login</a></li>
+                                <li><a href="{% url 'core:signup' %}">Register</a></li>
+                            </ul>
+                            
+                        {% endif %}
+                        <i class="fa fa-bars" onclick="showMenu()"></i>
+                    </div> -->
+            <!-- </div> -->
+        <!-- </nav> -->
+        <nav>
+            <a href="{% url 'core:index' %}" class="logo">KitereSafety</a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i> 
+                <ul>
+                    <li><a href="{% url 'blog-home' %}">Home</a></li>
+                    <li><a href="{% url 'blog-about' %}">About</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'post-create' %}">New Post</a></li>
+                        <li><a href="{% url 'profile' %}">Profile</a></li>
+                            
+                        <div class="logout-btn">
+                            <form action="{% url 'logout' %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit">Logout</button>
+                            </form>
+                        </div>
+                    {% else %}
+                        <li><a href="{% url 'core:login' %}">Login</a></li>
+                        <li><a href="{% url 'core:signup' %}">Register</a></li>   
+                    {% endif %}
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="row">
+            <div>
+                {% if messages %} 
+                    {% for message in messages %} 
+                        <div class="alert">
+                            {{ message }} 
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </main>
+    
+
+    <script>
+
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+
+    </script>
+
+</body>
+</html>
