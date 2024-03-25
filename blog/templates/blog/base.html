@@ -15,50 +15,16 @@
 </head>
 <body>
     <header>
-        <!-- <nav id="navBar">
-            <div class="container">
-                <div class="nav-links">
-                    <a href="{% url 'core:index' %}" class="logo">KitereSafety</a>
-                    <i class="fa fa-times" onclick="hideMenu()"></i>
-                    <div class="links-1">
-                        <ul class="nav-links">
-                            <li><a href="{% url 'blog-home' %}">Home</a></li>
-                            <li><a href="{% url 'blog-about' %}">About</a></li>
-                        </ul>
-                        
-                    </div> -->
-                    <!--Navbar Right Side-->
-                    <!-- <div class="links-2">
-                        {% if user.is_authenticated %}
-                            <ul class="nav-links">
-                                <li><a href="{% url 'post-create' %}">New Post</a></li>
-                                <li><a href="{% url 'profile' %}">Profile</a></li>
-                            </ul> -->
-                            
-                            <!-- <div class="logout-btn"> -->
-                            <!-- <form action="{% url 'logout' %}" method="post">
-                                {% csrf_token %}
-                                <button type="submit">Logout</button>
-                            </form> -->
-                            <!-- </div> -->
-                        <!-- {% else %}
-                            <ul class="nav-links">
-                                <li><a href="{% url 'core:login' %}">Login</a></li>
-                                <li><a href="{% url 'core:signup' %}">Register</a></li>
-                            </ul>
-                            
-                        {% endif %}
-                        <i class="fa fa-bars" onclick="showMenu()"></i>
-                    </div> -->
-            <!-- </div> -->
-        <!-- </nav> -->
         <nav>
             <a href="{% url 'core:index' %}" class="logo">KitereSafety</a>
             <div class="nav-links" id="navLinks">
+                <div>
                 <i class="fa fa-times" onclick="hideMenu()"></i> 
                 <ul>
                     <li><a href="{% url 'blog-home' %}">Home</a></li>
                     <li><a href="{% url 'blog-about' %}">About</a></li>
+                </div>
+                <div class="links">
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'post-create' %}">New Post</a></li>
                         <li><a href="{% url 'profile' %}">Profile</a></li>
@@ -74,6 +40,7 @@
                         <li><a href="{% url 'core:signup' %}">Register</a></li>   
                     {% endif %}
                 </ul>
+                </div>
             </div>
             <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
@@ -94,6 +61,35 @@
         </div>
     </main>
     
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="footer-flex">
+            <div class="footer-right">
+                <a href="{% url 'core:index' %}" class="logo">KitereSafety</a>
+
+            </div>
+            <div class="footer-left">
+                <div class="left-right">
+                    <a href="{% url 'blog-home' %}">Community</a>
+                    <a href="{% url 'report-home' %}">Report</a>
+                    <a href="{% url 'core:about' %}">About</a>
+                    <!-- <a href="{% url 'core:careers' %}">Careers</a> -->
+                </div>
+                <div class="left-left">
+                    <a href="{% url 'core:privacy' %}">Privacy</a>
+                    <a href="{% url 'core:terms' %}">Terms</a>
+                </div>
+            </div>
+        </div>
+        <div class="social-media-links">
+            <a href=""><i class="fa fa-facebook"></i></a>
+            <a href=""><i class="fa fa-twitter"></i></a>
+            <a href=""><i class="fa fa-instagram"></i></a>
+            <a href=""><i class="fa fa-linkedin"></i></a>
+        </div>
+        <p>&copy;KitereSafety 2024</p>
+    </footer>
 
     <script>
 

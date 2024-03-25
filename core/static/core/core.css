@@ -11,6 +11,9 @@ a{
 a:hover{
     color: white;
 }
+ul, li{
+    list-style: none;
+}
 /* .logo{
     text-decoration: none;
     color: white;
@@ -51,7 +54,6 @@ a:hover{
 }
 nav {
     display: flex;
-    /* padding: 2% 6%; */
     padding-top: 20px;
     padding-bottom: 20px;
     justify-content: space-between;
@@ -62,30 +64,12 @@ nav {
     width: 100%;
 }
 
-nav img {
-    width: 150px;
-}
-
-.nav-links {
-    flex: 1;
-    text-align: right;
-    margin-right: 20px;
-    font-size: 20px;
-}
-
 .nav-links ul li {
     list-style: none;
     display: inline-block;
     padding: 8px 12px;
     position: relative;
 }
-
-/* .nav-links ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 13px;
-} */
-
 
 nav .fa {
     display: none;
@@ -97,7 +81,18 @@ nav .fa {
     cursor: pointer;
     border-color: transparent;
     border-radius: 10px;
-    margin-top: 8px;
+    margin-left: 20px;
+}
+.links{
+    display: flex;
+    margin-right: 5px;
+    padding: 8px 12px;
+}
+.links a{
+    margin-left: 20px;
+}
+nav div{
+    display: flex;
 }
 .background{
     background: black; /*This should be a background image. */
@@ -390,6 +385,25 @@ footer p{
 
     .nav-links ul {
         padding: 30px;
+    }
+    .links{
+        margin-top: 0px;
+        display: block;
+        margin-right: 0px;
+        padding: 0;
+        margin-bottom: 10px;
+        margin-left: 20px;
+    }
+    nav div{
+        display: block;
+    }
+    .logout-btn{
+        border-radius: 10px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    .logout-btn button{
+        margin-top: 0px;
     }
     .logo {
         color: white;
